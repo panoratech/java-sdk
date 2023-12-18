@@ -21,6 +21,11 @@ public class PassthroughService extends BaseService implements PassthroughClient
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Make a passthrough request
+   * @param {String} integrationId - Needed input variable
+   * @param {String} linkedUserId - Needed input variable
+   */
   public dev.panora.models.PassThroughResponse passthroughRequest(
     dev.panora.models.PassThroughRequestDto input,
     String integrationId,

@@ -39,88 +39,88 @@ A list of all services and services methods.
 
 | Method    | Description|
 | :-------- | :----------| 
-| [signUp](#signup) |  |
-| [signIn](#signin) |  |
-| [getUsers](#getusers) |  |
-| [getApiKeys](#getapikeys) |  |
-| [generateApiKey](#generateapikey) |  |
+| [signUp](#signup) | Register |
+| [signIn](#signin) | Log In |
+| [getUsers](#getusers) | Get users |
+| [getApiKeys](#getapikeys) | Retrieve API Keys |
+| [generateApiKey](#generateapikey) | Create API Key |
 
 
 ## Connections
 
 | Method    | Description|
 | :-------- | :----------| 
-| [handleOAuthCallback](#handleoauthcallback) |  |
-| [getConnections](#getconnections) |  |
+| [handleOAuthCallback](#handleoauthcallback) | Capture oAuth Callback |
+| [getConnections](#getconnections) | Retrieve Connections |
 
 
 ## Webhook
 
 | Method    | Description|
 | :-------- | :----------| 
-| [createWebhookMetadata](#createwebhookmetadata) |  |
-| [getWebhooksMetadata](#getwebhooksmetadata) |  |
-| [updateWebhookStatus](#updatewebhookstatus) |  |
+| [createWebhookMetadata](#createwebhookmetadata) | Add webhook metadata |
+| [getWebhooksMetadata](#getwebhooksmetadata) | Retrieve webhooks metadata  |
+| [updateWebhookStatus](#updatewebhookstatus) | Update webhook status |
 
 
 ## LinkedUsers
 
 | Method    | Description|
 | :-------- | :----------| 
-| [addLinkedUser](#addlinkeduser) |  |
-| [getLinkedUsers](#getlinkedusers) |  |
-| [getLinkedUser](#getlinkeduser) |  |
+| [addLinkedUser](#addlinkeduser) | Add Linked User |
+| [getLinkedUsers](#getlinkedusers) | Retrieve Linked Users |
+| [getLinkedUser](#getlinkeduser) | Retrieve a Linked User |
 
 
 ## Organisations
 
 | Method    | Description|
 | :-------- | :----------| 
-| [getOrganisations](#getorganisations) |  |
-| [createOrganisation](#createorganisation) |  |
+| [getOrganisations](#getorganisations) | Retrieve Organisations |
+| [createOrganisation](#createorganisation) | Create an Organisation |
 
 
 ## Projects
 
 | Method    | Description|
 | :-------- | :----------| 
-| [getProjects](#getprojects) |  |
-| [createProject](#createproject) |  |
+| [getProjects](#getprojects) | Retrieve projects |
+| [createProject](#createproject) | Create a project |
 
 
 ## FieldMapping
 
 | Method    | Description|
 | :-------- | :----------| 
-| [getFieldMappingsEntities](#getfieldmappingsentities) |  |
-| [getFieldMappings](#getfieldmappings) |  |
-| [getFieldMappingValues](#getfieldmappingvalues) |  |
-| [defineTargetField](#definetargetfield) |  |
-| [mapField](#mapfield) |  |
-| [getCustomProviderProperties](#getcustomproviderproperties) |  |
+| [getFieldMappingsEntities](#getfieldmappingsentities) | Retrieve field mapping entities |
+| [getFieldMappings](#getfieldmappings) | Retrieve field mappings |
+| [getFieldMappingValues](#getfieldmappingvalues) | Retrieve field mappings values |
+| [defineTargetField](#definetargetfield) | Define target Field |
+| [mapField](#mapfield) | Map Custom Field |
+| [getCustomProviderProperties](#getcustomproviderproperties) | Retrieve Custom Properties |
 
 
 ## Events
 
 | Method    | Description|
 | :-------- | :----------| 
-| [getEvents](#getevents) |  |
+| [getEvents](#getevents) | Retrieve Events |
 
 
 ## MagicLink
 
 | Method    | Description|
 | :-------- | :----------| 
-| [createMagicLink](#createmagiclink) |  |
-| [getMagicLinks](#getmagiclinks) |  |
-| [getMagicLink](#getmagiclink) |  |
+| [createMagicLink](#createmagiclink) | Create a Magic Link |
+| [getMagicLinks](#getmagiclinks) | Retrieve Magic Links |
+| [getMagicLink](#getmagiclink) | Retrieve a Magic Link |
 
 
 ## Passthrough
 
 | Method    | Description|
 | :-------- | :----------| 
-| [passthroughRequest](#passthroughrequest) |  |
+| [passthroughRequest](#passthroughrequest) | Make a passthrough request |
 
 
 ## CrmContact
@@ -128,10 +128,10 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [addContact](#addcontact) | Create CRM Contact |
-| [getContacts](#getcontacts) |  |
-| [updateContact](#updatecontact) |  |
-| [getContact](#getcontact) | Retrive a CRM Contact |
-| [addContacts](#addcontacts) |  |
+| [getContacts](#getcontacts) | Retrieve a batch of CRM Contacts |
+| [updateContact](#updatecontact) | Update a CRM Contact |
+| [getContact](#getcontact) | Retrieve a CRM Contact |
+| [addContacts](#addcontacts) | Add a batch of CRM Contacts |
 
 
 ## All Methods
@@ -176,7 +176,7 @@ public class Main {
 
 
 ### **signUp**
-
+Register
 - HTTP Method: POST
 - Endpoint: /auth/register
 
@@ -213,7 +213,7 @@ public class Main {
 ```
 
 ### **signIn**
-
+Log In
 - HTTP Method: POST
 - Endpoint: /auth/login
 
@@ -250,7 +250,7 @@ public class Main {
 ```
 
 ### **getUsers**
-
+Get users
 - HTTP Method: GET
 - Endpoint: /auth/users
 
@@ -286,7 +286,7 @@ public class Main {
 ```
 
 ### **getApiKeys**
-
+Retrieve API Keys
 - HTTP Method: GET
 - Endpoint: /auth/api-keys
 
@@ -322,7 +322,7 @@ public class Main {
 ```
 
 ### **generateApiKey**
-
+Create API Key
 - HTTP Method: POST
 - Endpoint: /auth/generate-apikey
 
@@ -361,7 +361,7 @@ public class Main {
 
 
 ### **handleOAuthCallback**
-
+Capture oAuth Callback
 - HTTP Method: GET
 - Endpoint: /connections/oauth/callback
 
@@ -404,7 +404,7 @@ public class Main {
 ```
 
 ### **getConnections**
-
+Retrieve Connections
 - HTTP Method: GET
 - Endpoint: /connections
 
@@ -442,7 +442,7 @@ public class Main {
 
 
 ### **createWebhookMetadata**
-
+Add webhook metadata
 - HTTP Method: POST
 - Endpoint: /webhook
 
@@ -479,7 +479,7 @@ public class Main {
 ```
 
 ### **getWebhooksMetadata**
-
+Retrieve webhooks metadata 
 - HTTP Method: GET
 - Endpoint: /webhook
 
@@ -515,7 +515,7 @@ public class Main {
 ```
 
 ### **updateWebhookStatus**
-
+Update webhook status
 - HTTP Method: PUT
 - Endpoint: /webhook/{id}
 
@@ -554,7 +554,7 @@ public class Main {
 
 
 ### **addLinkedUser**
-
+Add Linked User
 - HTTP Method: POST
 - Endpoint: /linked-users/create
 
@@ -591,7 +591,7 @@ public class Main {
 ```
 
 ### **getLinkedUsers**
-
+Retrieve Linked Users
 - HTTP Method: GET
 - Endpoint: /linked-users
 
@@ -627,7 +627,7 @@ public class Main {
 ```
 
 ### **getLinkedUser**
-
+Retrieve a Linked User
 - HTTP Method: GET
 - Endpoint: /linked-users/single
 
@@ -666,7 +666,7 @@ public class Main {
 
 
 ### **getOrganisations**
-
+Retrieve Organisations
 - HTTP Method: GET
 - Endpoint: /organisations
 
@@ -702,7 +702,7 @@ public class Main {
 ```
 
 ### **createOrganisation**
-
+Create an Organisation
 - HTTP Method: POST
 - Endpoint: /organisations/create
 
@@ -741,7 +741,7 @@ public class Main {
 
 
 ### **getProjects**
-
+Retrieve projects
 - HTTP Method: GET
 - Endpoint: /projects
 
@@ -777,7 +777,7 @@ public class Main {
 ```
 
 ### **createProject**
-
+Create a project
 - HTTP Method: POST
 - Endpoint: /projects/create
 
@@ -816,7 +816,7 @@ public class Main {
 
 
 ### **getFieldMappingsEntities**
-
+Retrieve field mapping entities
 - HTTP Method: GET
 - Endpoint: /field-mapping/entities
 
@@ -852,7 +852,7 @@ public class Main {
 ```
 
 ### **getFieldMappings**
-
+Retrieve field mappings
 - HTTP Method: GET
 - Endpoint: /field-mapping/attribute
 
@@ -888,7 +888,7 @@ public class Main {
 ```
 
 ### **getFieldMappingValues**
-
+Retrieve field mappings values
 - HTTP Method: GET
 - Endpoint: /field-mapping/value
 
@@ -924,7 +924,7 @@ public class Main {
 ```
 
 ### **defineTargetField**
-
+Define target Field
 - HTTP Method: POST
 - Endpoint: /field-mapping/define
 
@@ -961,7 +961,7 @@ public class Main {
 ```
 
 ### **mapField**
-
+Map Custom Field
 - HTTP Method: POST
 - Endpoint: /field-mapping/map
 
@@ -998,7 +998,7 @@ public class Main {
 ```
 
 ### **getCustomProviderProperties**
-
+Retrieve Custom Properties
 - HTTP Method: GET
 - Endpoint: /field-mapping/properties
 
@@ -1041,7 +1041,7 @@ public class Main {
 
 
 ### **getEvents**
-
+Retrieve Events
 - HTTP Method: GET
 - Endpoint: /events
 
@@ -1079,7 +1079,7 @@ public class Main {
 
 
 ### **createMagicLink**
-
+Create a Magic Link
 - HTTP Method: POST
 - Endpoint: /magic-link/create
 
@@ -1116,7 +1116,7 @@ public class Main {
 ```
 
 ### **getMagicLinks**
-
+Retrieve Magic Links
 - HTTP Method: GET
 - Endpoint: /magic-link
 
@@ -1152,7 +1152,7 @@ public class Main {
 ```
 
 ### **getMagicLink**
-
+Retrieve a Magic Link
 - HTTP Method: GET
 - Endpoint: /magic-link/single
 
@@ -1191,7 +1191,7 @@ public class Main {
 
 
 ### **passthroughRequest**
-
+Make a passthrough request
 - HTTP Method: POST
 - Endpoint: /passthrough
 
@@ -1279,7 +1279,7 @@ public class Main {
 ```
 
 ### **getContacts**
-
+Retrieve a batch of CRM Contacts
 - HTTP Method: GET
 - Endpoint: /crm/contact
 
@@ -1322,7 +1322,7 @@ public class Main {
 ```
 
 ### **updateContact**
-
+Update a CRM Contact
 - HTTP Method: PATCH
 - Endpoint: /crm/contact
 
@@ -1359,7 +1359,7 @@ public class Main {
 ```
 
 ### **getContact**
-Retrive a CRM Contact
+Retrieve a CRM Contact
 - HTTP Method: GET
 - Endpoint: /crm/contact/{id}
 
@@ -1397,7 +1397,7 @@ public class Main {
 ```
 
 ### **addContacts**
-
+Add a batch of CRM Contacts
 - HTTP Method: POST
 - Endpoint: /crm/contact/batch
 

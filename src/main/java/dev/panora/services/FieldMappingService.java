@@ -21,6 +21,9 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve field mapping entities
+   */
   public String getFieldMappingsEntities() throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -38,6 +41,9 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     return null;
   }
 
+  /**
+   * @summary Retrieve field mappings
+   */
   public String getFieldMappings() throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -55,6 +61,9 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     return null;
   }
 
+  /**
+   * @summary Retrieve field mappings values
+   */
   public String getFieldMappingValues() throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -72,6 +81,9 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     return null;
   }
 
+  /**
+   * @summary Define target Field
+   */
   public String defineTargetField(dev.panora.models.DefineTargetFieldDto input)
     throws ApiException {
     String url = HttpUrl
@@ -94,6 +106,9 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     return null;
   }
 
+  /**
+   * @summary Map Custom Field
+   */
   public String mapField(dev.panora.models.MapFieldToProviderDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -115,6 +130,11 @@ public class FieldMappingService extends BaseService implements FieldMappingClie
     return null;
   }
 
+  /**
+   * @summary Retrieve Custom Properties
+   * @param {String} linkedUserId - Needed input variable
+   * @param {String} providerId - Needed input variable
+   */
   public String getCustomProviderProperties(String linkedUserId, String providerId)
     throws ApiException {
     String url = HttpUrl

@@ -21,6 +21,9 @@ public class AuthService extends BaseService implements AuthClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Register
+   */
   public String signUp(dev.panora.models.CreateUserDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -42,6 +45,9 @@ public class AuthService extends BaseService implements AuthClient {
     return null;
   }
 
+  /**
+   * @summary Log In
+   */
   public String signIn(dev.panora.models.LoginDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -63,6 +69,9 @@ public class AuthService extends BaseService implements AuthClient {
     return null;
   }
 
+  /**
+   * @summary Get users
+   */
   public String getUsers() throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -80,6 +89,9 @@ public class AuthService extends BaseService implements AuthClient {
     return null;
   }
 
+  /**
+   * @summary Retrieve API Keys
+   */
   public String getApiKeys() throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -97,6 +109,9 @@ public class AuthService extends BaseService implements AuthClient {
     return null;
   }
 
+  /**
+   * @summary Create API Key
+   */
   public String generateApiKey(dev.panora.models.ApiKeyDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
