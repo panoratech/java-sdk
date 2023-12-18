@@ -128,7 +128,7 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [addContact](#addcontact) | Create CRM Contact |
-| [getContacts](#getcontacts) | Retrieve a batch of CRM Contacts |
+| [getContacts](#getcontacts) | List a batch of CRM Contacts |
 | [updateContact](#updatecontact) | Update a CRM Contact |
 | [getContact](#getcontact) | Retrieve a CRM Contact |
 | [addContacts](#addcontacts) | Add a batch of CRM Contacts |
@@ -1279,7 +1279,7 @@ public class Main {
 ```
 
 ### **getContacts**
-Retrieve a batch of CRM Contacts
+List a batch of CRM Contacts
 - HTTP Method: GET
 - Endpoint: /crm/contact
 
