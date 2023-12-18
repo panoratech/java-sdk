@@ -21,6 +21,9 @@ public class LinkedUsersService extends BaseService implements LinkedUsersClient
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Add Linked User
+   */
   public String addLinkedUser(dev.panora.models.CreateLinkedUserDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -42,6 +45,9 @@ public class LinkedUsersService extends BaseService implements LinkedUsersClient
     return null;
   }
 
+  /**
+   * @summary Retrieve Linked Users
+   */
   public String getLinkedUsers() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("linked-users").build();
     Request request = new Request.Builder().url(url).get().build();
@@ -55,6 +61,10 @@ public class LinkedUsersService extends BaseService implements LinkedUsersClient
     return null;
   }
 
+  /**
+   * @summary Retrieve a Linked User
+   * @param {String} id - Needed input variable
+   */
   public String getLinkedUser(String id) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)

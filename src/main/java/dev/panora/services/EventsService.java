@@ -21,6 +21,9 @@ public class EventsService extends BaseService implements EventsClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve Events
+   */
   public String getEvents() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("events").build();
     Request request = new Request.Builder().url(url).get().build();

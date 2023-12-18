@@ -21,6 +21,9 @@ public class WebhookService extends BaseService implements WebhookClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve webhooks metadata
+   */
   public String getWebhooksMetadata() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("webhook").build();
     Request request = new Request.Builder().url(url).get().build();
@@ -34,6 +37,9 @@ public class WebhookService extends BaseService implements WebhookClient {
     return null;
   }
 
+  /**
+   * @summary Add webhook metadata
+   */
   public String createWebhookMetadata(dev.panora.models.WebhookDto input) throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("webhook").build();
     RequestBody requestBody = RequestBody.create(
@@ -51,6 +57,10 @@ public class WebhookService extends BaseService implements WebhookClient {
     return null;
   }
 
+  /**
+   * @summary Update webhook status
+   * @param {String} id - Needed input variable
+   */
   public String updateWebhookStatus(String id) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)

@@ -21,6 +21,9 @@ public class MagicLinkService extends BaseService implements MagicLinkClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Create a Magic Link
+   */
   public String createMagicLink(dev.panora.models.CreateMagicLinkDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -42,6 +45,9 @@ public class MagicLinkService extends BaseService implements MagicLinkClient {
     return null;
   }
 
+  /**
+   * @summary Retrieve Magic Links
+   */
   public String getMagicLinks() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("magic-link").build();
     Request request = new Request.Builder().url(url).get().build();
@@ -55,6 +61,10 @@ public class MagicLinkService extends BaseService implements MagicLinkClient {
     return null;
   }
 
+  /**
+   * @summary Retrieve a Magic Link
+   * @param {String} id - Needed input variable
+   */
   public String getMagicLink(String id) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)

@@ -21,6 +21,9 @@ public class ProjectsService extends BaseService implements ProjectsClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve projects
+   */
   public String getProjects() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("projects").build();
     Request request = new Request.Builder().url(url).get().build();
@@ -34,6 +37,9 @@ public class ProjectsService extends BaseService implements ProjectsClient {
     return null;
   }
 
+  /**
+   * @summary Create a project
+   */
   public String createProject(dev.panora.models.CreateProjectDto input) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)

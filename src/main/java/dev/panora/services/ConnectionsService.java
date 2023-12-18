@@ -21,6 +21,12 @@ public class ConnectionsService extends BaseService implements ConnectionsClient
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Capture oAuth Callback
+   * @param {String} state - Needed input variable
+   * @param {String} code - Needed input variable
+   * @param {String} location - Needed input variable
+   */
   public String handleOauthCallback(String state, String code, String location)
     throws ApiException {
     String url = HttpUrl
@@ -43,6 +49,9 @@ public class ConnectionsService extends BaseService implements ConnectionsClient
     return null;
   }
 
+  /**
+   * @summary Retrieve Connections
+   */
   public String getConnections() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("connections").build();
     Request request = new Request.Builder().url(url).get().build();

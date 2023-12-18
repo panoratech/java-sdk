@@ -21,6 +21,12 @@ public class CrmContactService extends BaseService implements CrmContactClient {
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve a batch of CRM Contacts
+   * @param {String} integrationId - Needed input variable
+   * @param {String} linkedUserId - Needed input variable
+   * @param {Boolean} [remoteData] - Needed input variable
+   */
   public dev.panora.models.GetContactsResponse getContacts(
     String integrationId,
     String linkedUserId,
@@ -76,6 +82,10 @@ public class CrmContactService extends BaseService implements CrmContactClient {
     );
   }
 
+  /**
+   * @summary Update a CRM Contact
+   * @param {String} id - Needed input variable
+   */
   public String updateContact(String id) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -99,7 +109,7 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Retrive a CRM Contact
+   * @summary Retrieve a CRM Contact
    * @param {String} id - Needed input variable
    * @param {Boolean} [remoteData] - Needed input variable
    */
@@ -121,6 +131,12 @@ public class CrmContactService extends BaseService implements CrmContactClient {
     );
   }
 
+  /**
+   * @summary Add a batch of CRM Contacts
+   * @param {String} integrationId - Needed input variable
+   * @param {String} linkedUserId - Needed input variable
+   * @param {Boolean} [remoteData] - Needed input variable
+   */
   public dev.panora.models.AddContactsResponse addContacts(
     java.util.List<dev.panora.models.UnifiedContactInput> input,
     String integrationId,

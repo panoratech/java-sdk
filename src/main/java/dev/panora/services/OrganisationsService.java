@@ -21,6 +21,9 @@ public class OrganisationsService extends BaseService implements OrganisationsCl
     super(httpClient, serverUrl);
   }
 
+  /**
+   * @summary Retrieve Organisations
+   */
   public String getOrganisations() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("organisations").build();
     Request request = new Request.Builder().url(url).get().build();
@@ -34,6 +37,9 @@ public class OrganisationsService extends BaseService implements OrganisationsCl
     return null;
   }
 
+  /**
+   * @summary Create an Organisation
+   */
   public String createOrganisation(dev.panora.models.CreateOrganizationDto input)
     throws ApiException {
     String url = HttpUrl
