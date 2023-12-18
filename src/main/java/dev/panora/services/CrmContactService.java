@@ -22,7 +22,7 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Retrieve a batch of CRM Contacts
+   * @summary List a batch of CRM Contacts
    * @param {String} integrationId - Needed input variable
    * @param {String} linkedUserId - Needed input variable
    * @param {Boolean} [remoteData] - Needed input variable
