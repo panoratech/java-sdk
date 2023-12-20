@@ -51,7 +51,7 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [handleOAuthCallback](#handleoauthcallback) | Capture oAuth Callback |
-| [getConnections](#getconnections) | Retrieve Connections |
+| [getConnections](#getconnections) | List Connections |
 
 
 ## Webhook
@@ -128,7 +128,7 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [addContact](#addcontact) | Create CRM Contact |
-| [getContacts](#getcontacts) | Retrieve a batch of CRM Contacts |
+| [getContacts](#getcontacts) | List a batch of CRM Contacts |
 | [updateContact](#updatecontact) | Update a CRM Contact |
 | [getContact](#getcontact) | Retrieve a CRM Contact |
 | [addContacts](#addcontacts) | Add a batch of CRM Contacts |
@@ -404,7 +404,7 @@ public class Main {
 ```
 
 ### **getConnections**
-Retrieve Connections
+List Connections
 - HTTP Method: GET
 - Endpoint: /connections
 
@@ -1243,9 +1243,9 @@ Create CRM Contact
 **Parameters**
 | Name    | Type| Required | Description |
 | :-------- | :----------| :----------| :----------| 
-| integrationId | String | Required |  |
-| linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| integrationId | String | Required | The integration ID |
+| linkedUserId | String | Required | The linked user ID |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 | input | Object | Required | Request body. |
 
 **Return Type**
@@ -1279,7 +1279,7 @@ public class Main {
 ```
 
 ### **getContacts**
-Retrieve a batch of CRM Contacts
+List a batch of CRM Contacts
 - HTTP Method: GET
 - Endpoint: /crm/contact
 
@@ -1289,7 +1289,7 @@ Retrieve a batch of CRM Contacts
 | :-------- | :----------| :----------| :----------| 
 | integrationId | String | Required |  |
 | linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 
 **Return Type**
 
@@ -1368,7 +1368,7 @@ Retrieve a CRM Contact
 | Name    | Type| Required | Description |
 | :-------- | :----------| :----------| :----------| 
 | id | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 
 **Return Type**
 
@@ -1407,7 +1407,7 @@ Add a batch of CRM Contacts
 | :-------- | :----------| :----------| :----------| 
 | integrationId | String | Required |  |
 | linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 | input | Object | Required | Request body. |
 
 **Return Type**
