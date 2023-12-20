@@ -22,7 +22,7 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Retrieve a batch of CRM Contacts
+   * @summary List a batch of CRM Contacts
    * @param {String} integrationId - Needed input variable
    * @param {String} linkedUserId - Needed input variable
    * @param {Boolean} [remoteData] - Needed input variable
@@ -51,9 +51,9 @@ public class CrmContactService extends BaseService implements CrmContactClient {
 
   /**
    * @summary Create CRM Contact
-   * @param {String} integrationId - Needed input variable
-   * @param {String} linkedUserId - Needed input variable
-   * @param {Boolean} [remoteData] - Needed input variable
+   * @param {String} integrationId - The integration ID
+   * @param {String} linkedUserId - The linked user ID
+   * @param {Boolean} [remoteData] - Set to true to include data from the original CRM software.
    */
   public dev.panora.models.AddContactResponse addContact(
     dev.panora.models.UnifiedContactInput input,
