@@ -38,6 +38,9 @@ public class CreateUserDto extends dev.panora.models.BaseModel {
     @com.fasterxml.jackson.annotation.JsonProperty("first_name")
     private java.lang.String firstName;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("id_organisation")
+    private java.lang.String idOrganisation;
+
     @com.fasterxml.jackson.annotation.JsonProperty("last_name")
     private java.lang.String lastName;
 
@@ -102,6 +105,9 @@ public class CreateUserDto extends dev.panora.models.BaseModel {
   @com.fasterxml.jackson.annotation.JsonProperty("first_name")
   private final java.lang.String firstName;
 
+  @com.fasterxml.jackson.annotation.JsonProperty("id_organisation")
+  private final java.lang.String idOrganisation;
+
   @com.fasterxml.jackson.annotation.JsonProperty("last_name")
   private final java.lang.String lastName;
 
@@ -112,6 +118,7 @@ public class CreateUserDto extends dev.panora.models.BaseModel {
     super(builder);
     this.email = builder.getEmail();
     this.firstName = builder.getFirstName();
+    this.idOrganisation = builder.getIdOrganisation();
     this.lastName = builder.getLastName();
     this.passwordHash = builder.getPasswordHash();
   }

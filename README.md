@@ -70,6 +70,7 @@ Click the service name for a full list of the service methods.
 | Service |
 | :------ |
 |[MainService](src/main/java/dev/panora/services/README.md#mainservice)|
+|[ProtectedService](src/main/java/dev/panora/services/README.md#protectedservice)|
 |[AuthService](src/main/java/dev/panora/services/README.md#authservice)|
 |[ConnectionsService](src/main/java/dev/panora/services/README.md#connectionsservice)|
 |[WebhookService](src/main/java/dev/panora/services/README.md#webhookservice)|
