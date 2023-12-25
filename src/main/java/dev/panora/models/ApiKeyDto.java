@@ -22,7 +22,7 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
 
     static {
       java.lang.String[][] requiredFieldsGroups = new java.lang.String[][] {
-        new java.lang.String[] { "projectId", "userId" },
+        new java.lang.String[] { "keyName", "projectId", "userId" },
       };
 
       REQUIRED_FIELDS_GROUPS =

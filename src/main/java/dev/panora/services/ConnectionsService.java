@@ -50,7 +50,7 @@ public class ConnectionsService extends BaseService implements ConnectionsClient
   }
 
   /**
-   * @summary Retrieve Connections
+   * @summary List Connections
    */
   public String getConnections() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("connections").build();
