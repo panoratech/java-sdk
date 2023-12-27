@@ -4,6 +4,8 @@ A list of all services and services methods.
 
     - [Main](#main)
 
+    - [Protected](#protected)
+
     - [Auth](#auth)
 
     - [Connections](#connections)
@@ -25,6 +27,8 @@ A list of all services and services methods.
     - [Passthrough](#passthrough)
 
     - [CrmContact](#crmcontact)
+
+    - [TicketingTicket](#ticketingticket)
 - [All Methods](#all-methods)
 
 
@@ -33,6 +37,13 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [appControllerGetHello](#appcontrollergethello) |  |
+
+
+## Protected
+
+| Method    | Description|
+| :-------- | :----------| 
+| [appControllerGetHello2](#appcontrollergethello2) |  |
 
 
 ## Auth
@@ -51,7 +62,7 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [handleOAuthCallback](#handleoauthcallback) | Capture oAuth Callback |
-| [getConnections](#getconnections) | Retrieve Connections |
+| [getConnections](#getconnections) | List Connections |
 
 
 ## Webhook
@@ -128,10 +139,21 @@ A list of all services and services methods.
 | Method    | Description|
 | :-------- | :----------| 
 | [addContact](#addcontact) | Create CRM Contact |
-| [getContacts](#getcontacts) | Retrieve a batch of CRM Contacts |
+| [getContacts](#getcontacts) | List a batch of CRM Contacts |
 | [updateContact](#updatecontact) | Update a CRM Contact |
 | [getContact](#getcontact) | Retrieve a CRM Contact |
 | [addContacts](#addcontacts) | Add a batch of CRM Contacts |
+
+
+## TicketingTicket
+
+| Method    | Description|
+| :-------- | :----------| 
+| [addTicket](#addticket) | Create a Ticket |
+| [getTickets](#gettickets) | List a batch of Tickets |
+| [updateTicket](#updateticket) | Update a Ticket |
+| [getTicket](#getticket) | Retrieve a Ticket |
+| [addTickets](#addtickets) | Add a batch of Tickets |
 
 
 ## All Methods
@@ -164,6 +186,44 @@ public class Main {
     PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
     try {
       Object response = client.mainService.appControllerGetHello();
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+
+
+### **appControllerGetHello2**
+
+- HTTP Method: GET
+- Endpoint: /protected
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.protectedService.appControllerGetHello2();
       System.out.println(response);
     } catch (ApiException e) {
       e.printStackTrace();
@@ -404,7 +464,7 @@ public class Main {
 ```
 
 ### **getConnections**
-Retrieve Connections
+List Connections
 - HTTP Method: GET
 - Endpoint: /connections
 
@@ -1243,14 +1303,14 @@ Create CRM Contact
 **Parameters**
 | Name    | Type| Required | Description |
 | :-------- | :----------| :----------| :----------| 
-| integrationId | String | Required |  |
-| linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| integrationId | String | Required | The integration ID |
+| linkedUserId | String | Required | The linked user ID |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 | input | Object | Required | Request body. |
 
 **Return Type**
 
-[AddContactResponse](/src/main/java/io/panorasdk/models/README.md#addcontactresponse) 
+Returns a dict object.
 
 **Example Usage Code Snippet**
 ```Java
@@ -1279,7 +1339,7 @@ public class Main {
 ```
 
 ### **getContacts**
-Retrieve a batch of CRM Contacts
+List a batch of CRM Contacts
 - HTTP Method: GET
 - Endpoint: /crm/contact
 
@@ -1289,11 +1349,11 @@ Retrieve a batch of CRM Contacts
 | :-------- | :----------| :----------| :----------| 
 | integrationId | String | Required |  |
 | linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 
 **Return Type**
 
-[GetContactsResponse](/src/main/java/io/panorasdk/models/README.md#getcontactsresponse) 
+Returns a dict object.
 
 **Example Usage Code Snippet**
 ```Java
@@ -1367,12 +1427,12 @@ Retrieve a CRM Contact
 **Parameters**
 | Name    | Type| Required | Description |
 | :-------- | :----------| :----------| :----------| 
-| id | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| id | String | Required | id of the `contact` you want to retrive. |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 
 **Return Type**
 
-[GetContactResponse](/src/main/java/io/panorasdk/models/README.md#getcontactresponse) 
+Returns a dict object.
 
 **Example Usage Code Snippet**
 ```Java
@@ -1407,12 +1467,12 @@ Add a batch of CRM Contacts
 | :-------- | :----------| :----------| :----------| 
 | integrationId | String | Required |  |
 | linkedUserId | String | Required |  |
-| remoteData | Boolean | Optional |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original CRM software. |
 | input | Object | Required | Request body. |
 
 **Return Type**
 
-[AddContactsResponse](/src/main/java/io/panorasdk/models/README.md#addcontactsresponse) 
+Returns a dict object.
 
 **Example Usage Code Snippet**
 ```Java
@@ -1427,6 +1487,214 @@ public class Main {
     PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
     try {
       Object response = client.crmContactService.addContacts(
+        "integrationIdSampleValue",
+        "linkedUserIdSampleValue",
+        true
+      );
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+
+
+### **addTicket**
+Create a Ticket
+- HTTP Method: POST
+- Endpoint: /ticketing/ticket
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+| integrationId | String | Required | The integration ID |
+| linkedUserId | String | Required | The linked user ID |
+| remoteData | Boolean | Optional | Set to true to include data from the original Ticketing software. |
+| input | Object | Required | Request body. |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.ticketingTicketService.addTicket(
+        "integrationIdSampleValue",
+        "linkedUserIdSampleValue",
+        true
+      );
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **getTickets**
+List a batch of Tickets
+- HTTP Method: GET
+- Endpoint: /ticketing/ticket
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+| integrationId | String | Required |  |
+| linkedUserId | String | Required |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original Ticketing software. |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.ticketingTicketService.getTickets(
+        "integrationIdSampleValue",
+        "linkedUserIdSampleValue",
+        true
+      );
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **updateTicket**
+Update a Ticket
+- HTTP Method: PATCH
+- Endpoint: /ticketing/ticket
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+| id | String | Required |  |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.ticketingTicketService.updateTicket("idSampleValue");
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **getTicket**
+Retrieve a Ticket
+- HTTP Method: GET
+- Endpoint: /ticketing/ticket/{id}
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+| id | String | Required | id of the `ticket` you want to retrive. |
+| remoteData | Boolean | Optional | Set to true to include data from the original Ticketing software. |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.ticketingTicketService.getTicket("idSampleValue", true);
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **addTickets**
+Add a batch of Tickets
+- HTTP Method: POST
+- Endpoint: /ticketing/ticket/batch
+
+
+**Parameters**
+| Name    | Type| Required | Description |
+| :-------- | :----------| :----------| :----------| 
+| integrationId | String | Required |  |
+| linkedUserId | String | Required |  |
+| remoteData | Boolean | Optional | Set to true to include data from the original Ticketing software. |
+| input | Object | Required | Request body. |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+```Java
+package dev.panora.examples;
+
+import dev.panora.PanoraSDK;
+import dev.panora.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    PanoraSDK client = new PanoraSDK(System.getenv("PANORASDK_BEARER_TOKEN"));
+    try {
+      Object response = client.ticketingTicketService.addTickets(
         "integrationIdSampleValue",
         "linkedUserIdSampleValue",
         true

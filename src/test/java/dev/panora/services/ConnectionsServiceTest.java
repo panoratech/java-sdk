@@ -12,7 +12,7 @@ class ConnectionsServiceTest {
 
   // public void test() {}
 
-  // TODO: Write tests for handleOauthCallback
+  // TODO: Write tests for handleOAuthCallback
 
   // TODO: Write tests for getConnections
 
