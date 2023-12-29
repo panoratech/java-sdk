@@ -6,8 +6,10 @@ package dev.panora.models;
 @com.fasterxml.jackson.annotation.JsonInclude(
   com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL
 )
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiKeyDto.Builder.class)
-public class ApiKeyDto extends dev.panora.models.BaseModel {
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+  builder = UnifiedTicketInput.Builder.class
+)
+public class UnifiedTicketInput extends dev.panora.models.BaseModel {
 
   @lombok.Getter
   @lombok.Setter
@@ -21,9 +23,7 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
     static final java.util.Set<java.util.Set<String>> REQUIRED_FIELDS_GROUPS;
 
     static {
-      java.lang.String[][] requiredFieldsGroups = new java.lang.String[][] {
-        new java.lang.String[] { "keyName", "projectId", "userId" },
-      };
+      java.lang.String[][] requiredFieldsGroups = new java.lang.String[][] {};
 
       REQUIRED_FIELDS_GROUPS =
         java.util.Arrays
@@ -31,15 +31,6 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
           .map(group -> java.util.Arrays.stream(group).collect(java.util.stream.Collectors.toSet()))
           .collect(java.util.stream.Collectors.toSet());
     }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("keyName")
-    private java.lang.String keyName;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("projectId")
-    private java.lang.String projectId;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    private java.lang.String userId;
 
     public Builder() {
       super(ValidationType.ALL_OF);
@@ -49,7 +40,7 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
       super(validationType);
     }
 
-    public ApiKeyDto build() {
+    public UnifiedTicketInput build() {
       String validateMsg = validate();
 
       if (validateMsg != null) {
@@ -59,8 +50,8 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
       return buildWithoutValidation();
     }
 
-    public ApiKeyDto buildWithoutValidation() {
-      return new ApiKeyDto(this);
+    public UnifiedTicketInput buildWithoutValidation() {
+      return new UnifiedTicketInput(this);
     }
 
     @Override
@@ -93,19 +84,7 @@ public class ApiKeyDto extends dev.panora.models.BaseModel {
     }
   }
 
-  @com.fasterxml.jackson.annotation.JsonProperty("keyName")
-  private final java.lang.String keyName;
-
-  @com.fasterxml.jackson.annotation.JsonProperty("projectId")
-  private final java.lang.String projectId;
-
-  @com.fasterxml.jackson.annotation.JsonProperty("userId")
-  private final java.lang.String userId;
-
-  ApiKeyDto(Builder builder) {
+  UnifiedTicketInput(Builder builder) {
     super(builder);
-    this.keyName = builder.getKeyName();
-    this.projectId = builder.getProjectId();
-    this.userId = builder.getUserId();
   }
 }
