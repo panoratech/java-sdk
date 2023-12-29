@@ -39,7 +39,7 @@ public class WebhookDto extends dev.panora.models.BaseModel {
     private java.lang.String idProject;
 
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
-    private java.lang.String scope;
+    private java.util.List<java.lang.String> scope;
 
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private java.lang.String url;
@@ -103,7 +103,7 @@ public class WebhookDto extends dev.panora.models.BaseModel {
   private final java.lang.String idProject;
 
   @com.fasterxml.jackson.annotation.JsonProperty("scope")
-  private final java.lang.String scope;
+  private final java.util.List<java.lang.String> scope;
 
   @com.fasterxml.jackson.annotation.JsonProperty("url")
   private final java.lang.String url;

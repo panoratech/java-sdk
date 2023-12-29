@@ -1,11 +1,8 @@
 # PanoraSDK Models
 
 A list of all models.
-- [GetContactsResponse](#getcontactsresponse)
-- [AddContactResponse](#addcontactresponse)
-- [GetContactResponse](#getcontactresponse)
-- [AddContactsResponse](#addcontactsresponse)
 - [AddContactsRequest](#addcontactsrequest)
+- [AddTicketsRequest](#addticketsrequest)
 - [CreateUserDto](#createuserdto)
 - [LoginDto](#logindto)
 - [ApiKeyDto](#apikeydto)
@@ -18,20 +15,14 @@ A list of all models.
 - [CreateMagicLinkDto](#createmagiclinkdto)
 - [PassThroughRequestDto](#passthroughrequestdto)
 - [PassThroughResponse](#passthroughresponse)
-- [ContactResponse](#contactresponse)
 - [UnifiedContactInput](#unifiedcontactinput)
 - [Email](#email)
 - [Phone](#phone)
-
-## GetContactsResponse
-
-## AddContactResponse
-
-## GetContactResponse
-
-## AddContactsResponse
+- [UnifiedTicketInput](#unifiedticketinput)
 
 ## AddContactsRequest
+
+## AddTicketsRequest
 
 ## CreateUserDto
 
@@ -57,13 +48,13 @@ A list of all models.
 
 ## PassThroughResponse
 
-## ContactResponse
-
 ## UnifiedContactInput
 
 ## Email
 
 ## Phone
+
+## UnifiedTicketInput
 
 
 

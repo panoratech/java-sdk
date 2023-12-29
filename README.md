@@ -70,6 +70,7 @@ Click the service name for a full list of the service methods.
 | Service |
 | :------ |
 |[MainService](src/main/java/dev/panora/services/README.md#mainservice)|
+|[ProtectedService](src/main/java/dev/panora/services/README.md#protectedservice)|
 |[AuthService](src/main/java/dev/panora/services/README.md#authservice)|
 |[ConnectionsService](src/main/java/dev/panora/services/README.md#connectionsservice)|
 |[WebhookService](src/main/java/dev/panora/services/README.md#webhookservice)|
@@ -81,6 +82,7 @@ Click the service name for a full list of the service methods.
 |[MagicLinkService](src/main/java/dev/panora/services/README.md#magiclinkservice)|
 |[PassthroughService](src/main/java/dev/panora/services/README.md#passthroughservice)|
 |[CrmContactService](src/main/java/dev/panora/services/README.md#crmcontactservice)|
+|[TicketingTicketService](src/main/java/dev/panora/services/README.md#ticketingticketservice)|
 
 ## API Models
 [A list documenting all API models for this SDK](src/main/java/dev/panora//models/README.md#panorasdk-models).
