@@ -27,7 +27,7 @@ public class ConnectionsService extends BaseService implements ConnectionsClient
    * @param {String} code - Needed input variable
    * @param {String} location - Needed input variable
    */
-  public String handleOauthCallback(String state, String code, String location)
+  public String handleOAuthCallback(String state, String code, String location)
     throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
@@ -50,7 +50,7 @@ public class ConnectionsService extends BaseService implements ConnectionsClient
   }
 
   /**
-   * @summary Retrieve Connections
+   * @summary List Connections
    */
   public String getConnections() throws ApiException {
     String url = HttpUrl.builder(this.serverUrl).addPathParameter("connections").build();

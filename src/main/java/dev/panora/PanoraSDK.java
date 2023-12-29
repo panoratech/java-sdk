@@ -21,6 +21,9 @@ public class PanoraSDK {
   public OrganisationsService organisationsService;
   public PassthroughService passthroughService;
   public ProjectsService projectsService;
+  public ProtectedService protectedService;
+  public TicketingCommentService ticketingcommentService;
+  public TicketingTicketService ticketingticketService;
   public WebhookService webhookService;
 
   private final BearerTokenInterceptor bearerTokenInterceptor = new BearerTokenInterceptor();
@@ -44,6 +47,9 @@ public class PanoraSDK {
     this.organisationsService = new OrganisationsService(httpClient, serverUrl);
     this.passthroughService = new PassthroughService(httpClient, serverUrl);
     this.projectsService = new ProjectsService(httpClient, serverUrl);
+    this.protectedService = new ProtectedService(httpClient, serverUrl);
+    this.ticketingcommentService = new TicketingCommentService(httpClient, serverUrl);
+    this.ticketingticketService = new TicketingTicketService(httpClient, serverUrl);
     this.webhookService = new WebhookService(httpClient, serverUrl);
   }
 
@@ -64,6 +70,9 @@ public class PanoraSDK {
     this.organisationsService.setBaseUrl(url);
     this.passthroughService.setBaseUrl(url);
     this.projectsService.setBaseUrl(url);
+    this.protectedService.setBaseUrl(url);
+    this.ticketingcommentService.setBaseUrl(url);
+    this.ticketingticketService.setBaseUrl(url);
     this.webhookService.setBaseUrl(url);
   }
 
