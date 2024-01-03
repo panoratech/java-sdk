@@ -15,24 +15,24 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class CrmContactService extends BaseService implements CrmContactClient {
+public class TicketingCommentService extends BaseService implements TicketingCommentClient {
 
-  public CrmContactService(OkHttpClient httpClient, String serverUrl) {
+  public TicketingCommentService(OkHttpClient httpClient, String serverUrl) {
     super(httpClient, serverUrl);
   }
 
   /**
-   * @summary List a batch of CRM Contacts
+   * @summary List a batch of Comments
    * @param {String} integrationId - Needed input variable
    * @param {String} linkedUserId - Needed input variable
-   * @param {Boolean} [remoteData] - Set to true to include data from the original CRM software.
+   * @param {Boolean} [remoteData] - Set to true to include data from the original Ticketing software.
    */
-  public String getContacts(String integrationId, String linkedUserId, Boolean remoteData)
+  public String getComments(String integrationId, String linkedUserId, Boolean remoteData)
     throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
-      .addPathParameter("crm")
-      .addPathParameter("contact")
+      .addPathParameter("ticketing")
+      .addPathParameter("comment")
       .addOptionalQueryParameter("remoteData", remoteData)
       .build();
     Headers headers = HttpHeaders
@@ -52,21 +52,21 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Create CRM Contact
+   * @summary Create a Comment
    * @param {String} integrationId - The integration ID
    * @param {String} linkedUserId - The linked user ID
-   * @param {Boolean} [remoteData] - Set to true to include data from the original CRM software.
+   * @param {Boolean} [remoteData] - Set to true to include data from the original Ticketing software.
    */
-  public String addContact(
-    dev.panora.models.UnifiedContactInput input,
+  public String addComment(
+    dev.panora.models.UnifiedCommentInput input,
     String integrationId,
     String linkedUserId,
     Boolean remoteData
   ) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
-      .addPathParameter("crm")
-      .addPathParameter("contact")
+      .addPathParameter("ticketing")
+      .addPathParameter("comment")
       .addOptionalQueryParameter("remoteData", remoteData)
       .build();
     Headers headers = HttpHeaders
@@ -90,14 +90,14 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Update a CRM Contact
+   * @summary Update a Comment
    * @param {String} id - Needed input variable
    */
-  public String updateContact(String id) throws ApiException {
+  public String updateComment(String id) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
-      .addPathParameter("crm")
-      .addPathParameter("contact")
+      .addPathParameter("ticketing")
+      .addPathParameter("comment")
       .addRequiredQueryParameter("id", id)
       .build();
     RequestBody requestBody = RequestBody.create(
@@ -116,15 +116,15 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Retrieve a CRM Contact
-   * @param {String} id - id of the `contact` you want to retrive.
-   * @param {Boolean} [remoteData] - Set to true to include data from the original CRM software.
+   * @summary Retrieve a Comment
+   * @param {String} id - id of the `ticket` you want to retrive.
+   * @param {Boolean} [remoteData] - Set to true to include data from the original Ticketing software.
    */
-  public String getContact(String id, Boolean remoteData) throws ApiException {
+  public String getComment(String id, Boolean remoteData) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
-      .addPathParameter("crm")
-      .addPathParameter("contact")
+      .addPathParameter("ticketing")
+      .addPathParameter("comment")
       .addPathParameter(String.valueOf(id))
       .addOptionalQueryParameter("remoteData", remoteData)
       .build();
@@ -140,21 +140,21 @@ public class CrmContactService extends BaseService implements CrmContactClient {
   }
 
   /**
-   * @summary Add a batch of CRM Contacts
+   * @summary Add a batch of Comments
    * @param {String} integrationId - Needed input variable
    * @param {String} linkedUserId - Needed input variable
-   * @param {Boolean} [remoteData] - Set to true to include data from the original CRM software.
+   * @param {Boolean} [remoteData] - Set to true to include data from the original Ticketing software.
    */
-  public String addContacts(
-    java.util.List<dev.panora.models.UnifiedContactInput> input,
+  public String addComments(
+    java.util.List<dev.panora.models.UnifiedCommentInput> input,
     String integrationId,
     String linkedUserId,
     Boolean remoteData
   ) throws ApiException {
     String url = HttpUrl
       .builder(this.serverUrl)
-      .addPathParameter("crm")
-      .addPathParameter("contact")
+      .addPathParameter("ticketing")
+      .addPathParameter("comment")
       .addPathParameter("batch")
       .addOptionalQueryParameter("remoteData", remoteData)
       .build();
